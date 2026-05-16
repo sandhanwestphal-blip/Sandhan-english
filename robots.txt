@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sandhanwestphal-blip.github.io/Sandhan/sitemap.xml
