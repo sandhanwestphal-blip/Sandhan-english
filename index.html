@@ -262,9 +262,9 @@ footer a:hover{color:var(--terracotta)}
   <div class="contact-form reveal">
     <form id="contact-form" action="https://formspree.io/f/mwvwllww" method="POST" onsubmit="handleSubmit(event)">
       <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Deine E-Mail-Adresse" required>
-      <input type="text" name="subject" placeholder="Betreff">
-      <textarea name="message" placeholder="Deine Nachricht ..." required></textarea>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <input type="text" name="subject" placeholder="Subject">
+      <textarea name="message" placeholder="Your Message ..." required></textarea>
       <button type="submit" class="btn" id="submit-btn">Send Message</button>
     </form>
     <div id="form-success" style="display:none;padding:2rem 0">
@@ -333,7 +333,7 @@ async function handleSubmit(e) {
   var success = document.getElementById('form-success');
   var error = document.getElementById('form-error');
   error.style.display = 'none';
-  btn.textContent = 'Wird gesendet...';
+  btn.textContent = 'Sending...';
   btn.disabled = true;
   var formData = new FormData(form);
   try {
@@ -351,23 +351,23 @@ async function handleSubmit(e) {
       try { data = await response.json(); } catch(je) {}
       var msg = '';
       if (status === 404) {
-        msg = 'https://formspree.io/f/mwvwllww';
+        msg = 'Form not found. Please write directly to: sandhan.westphal@gmx.de';
       } else if (status === 403) {
-        msg = 'https://formspree.io/f/mwvwllww';
+        msg = 'Submission not allowed. Please write directly to: sandhan.westphal@gmx.de';
       } else if (status === 422) {
-        msg = data.errors ? data.errors.map(function(x){return x.message;}).join(', ') : 'Pflichtfelder fehlen.';
+        msg = data.errors ? data.errors.map(function(x){return x.message;}).join(', ') : 'Required fields are missing.';
       } else {
-        msg = 'Fehler ' + status + (data.error ? ': ' + data.error : '') + '. Bitte direkt schreiben: sandhan.westphal@gmx.de';
+        msg = 'Error ' + status + (data.error ? ': ' + data.error : '') + '. Please write directly to: sandhan.westphal@gmx.de';
       }
       error.textContent = msg;
       error.style.display = 'block';
-      btn.textContent = 'Nachricht senden';
+      btn.textContent = 'Send Message';
       btn.disabled = false;
     }
   } catch(err) {
-    error.innerHTML = 'Verbindung fehlgeschlagen. Bitte direkt schreiben an: <a href="mailto:sandhan.westphal@gmx.de" style="color:var(--terracotta)">sandhan.westphal@gmx.de</a>';
+    error.innerHTML = 'Connection failed. Please write directly to: <a href="mailto:sandhan.westphal@gmx.de" style="color:var(--terracotta)">sandhan.westphal@gmx.de</a>';
     error.style.display = 'block';
-    btn.textContent = 'Nachricht senden';
+    btn.textContent = 'Send Message';
     btn.disabled = false;
   }
 }
