@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Imprint – Sandhan Westphal" description="Legal notice for sandhan-westphal.com">
+  <Nav />
+  <main class="legal">
+    <div class="legal__inner">
+      <h1>Imprint</h1>
+
+      <h2>Information according to § 5 TMG (German Telemedia Act)</h2>
+      <p>
+        Sandhan Jürgen Westphal<br />
+        Raimundstr. 10 B<br />
+        04177 Leipzig, Germany
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Phone: <a href="tel:+491715882385">+49 171 5882385</a><br />
+        Email: <a href="mailto:Sandhanwestphal@gmail.com">Sandhanwestphal@gmail.com</a>
+      </p>
+
+      <h2>Note on professional designation</h2>
+      <p>
+        The activity as spiritual life counsellor and coach is a free, non-state-regulated
+        profession. My counselling is not a substitute for medical, psychiatric or
+        psychotherapeutic treatment.
+      </p>
+
+      <a href="/" class="back-link">← Back to homepage</a>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal { padding: 10rem 2rem 6rem; min-height: 100vh; background: var(--sand); }
+  .legal__inner { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: clamp(2rem, 4vw, 3rem); color: var(--deep); margin-bottom: 2.5rem; }
+  h2 { font-size: 1.3rem; color: var(--deep); margin: 2rem 0 0.75rem; }
+  p { font-size: 0.95rem; color: var(--text); line-height: 1.8; margin-bottom: 0.5rem; }
+  a { color: var(--terracotta); }
+  a:hover { text-decoration: underline; }
+  .back-link { display: inline-block; margin-top: 3rem; font-size: 0.85rem; color: var(--text-light); }
+</style>

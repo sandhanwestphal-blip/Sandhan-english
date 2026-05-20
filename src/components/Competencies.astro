@@ -1,0 +1,141 @@
+---
+const competencies = [
+  {
+    title: "NLP",
+    items: [
+      "Neuro-Linguistic Programming",
+      "Recognising communication patterns",
+      "Dissolving limiting beliefs",
+      "Activating inner resources",
+    ],
+  },
+  {
+    title: "Hypnosis",
+    items: [
+      "Hypnosis after Milton Erickson",
+      "Trance induction",
+      "Inner healing processes",
+      "Deep relaxation",
+    ],
+  },
+  {
+    title: "Meditation & Mindfulness",
+    items: [
+      "Vipassana",
+      "ZaZen",
+      "Breathwork",
+      "Stillness and presence",
+    ],
+  },
+  {
+    title: "Further Offerings",
+    items: [
+      "Trauma healing",
+      "Coaching",
+      "Reiki",
+      "Bodywork",
+    ],
+  },
+];
+---
+
+<section class="competencies" id="competencies">
+  <div class="competencies__inner">
+    <div class="competencies__header">
+      <p class="section__eyebrow">Competencies</p>
+      <h2 class="section__title">What I Work With</h2>
+    </div>
+
+    <div class="competencies__grid">
+      {competencies.map((c) => (
+        <div class="competency__card">
+          <div class="competency__icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <h3 class="competency__title">{c.title}</h3>
+          <ul class="competency__list">
+            {c.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .competencies {
+    padding: 7rem 2rem;
+    background-color: var(--warm);
+  }
+
+  .competencies__inner { max-width: 1200px; margin: 0 auto; }
+  .competencies__header { margin-bottom: 3.5rem; }
+
+  .section__eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 0.75rem;
+  }
+
+  .section__title { font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--deep); }
+
+  .competencies__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .competency__card {
+    background: var(--sand);
+    padding: 2rem 1.75rem;
+    transition: transform 0.2s;
+  }
+
+  .competency__card:hover { transform: translateY(-4px); }
+
+  .competency__icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 1.25rem;
+    width: 28px;
+  }
+
+  .competency__icon span { display: block; height: 1.5px; background: var(--terracotta); }
+  .competency__icon span:nth-child(2) { width: 70%; }
+  .competency__icon span:nth-child(3) { width: 45%; }
+
+  .competency__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--deep);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .competency__list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .competency__list li {
+    font-size: 0.88rem;
+    color: var(--text);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .competency__list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+
+  @media (max-width: 1024px) { .competencies__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px)  { .competencies__grid { grid-template-columns: 1fr; } }
+</style>

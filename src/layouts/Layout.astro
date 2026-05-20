@@ -1,0 +1,117 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Sandhan Westphal – Spiritual Life Counselling | Leipzig",
+  description = "Over 40 years of lived spiritual practice and psychological self-experience. Sandhan Westphal accompanies people in Leipzig with NLP, hypnosis, meditation and coaching.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Sandhan Jürgen Westphal" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sandhan Westphal – Spiritual Life Counselling" />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content="Sandhan Westphal" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sandhan Westphal – Spiritual Life Counselling" />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sandhan Jürgen Westphal",
+        "jobTitle": "Spiritual Life Counsellor",
+        "description": "Over 40 years of lived spiritual practice and psychological self-experience.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Raimundstr. 10 B",
+          "addressLocality": "Leipzig",
+          "postalCode": "04177",
+          "addressCountry": "DE"
+        },
+        "telephone": "+49 171 5882385",
+        "knowsAbout": ["NLP", "Milton Erickson Hypnosis", "Meditation", "Vipassana", "ZaZen", "Trauma Healing", "Coaching", "Reiki", "Bodywork"]
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --sand: #f5efe6;
+    --warm: #e8ddd0;
+    --terracotta: #c17f5a;
+    --deep: #1a1410;
+    --text: #3d2f25;
+    --text-light: #7a6555;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    color: var(--text);
+    background-color: var(--sand);
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+</style>

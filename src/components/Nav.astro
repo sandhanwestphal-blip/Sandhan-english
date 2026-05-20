@@ -1,0 +1,144 @@
+---
+---
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">Sandhan Westphal</a>
+
+    <ul class="nav__links">
+      <li><a href="/#about">About me</a></li>
+      <li><a href="/#competencies">Competencies</a></li>
+      <li><a href="/#training">Training</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="https://sandhan01.pages.dev/" class="nav__lang">🇩🇪 Deutsch</a></li>
+    </ul>
+
+    <button class="nav__burger" aria-label="Open menu" id="burger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav__mobile" id="mobileMenu">
+    <ul>
+      <li><a href="/#about">About me</a></li>
+      <li><a href="/#competencies">Competencies</a></li>
+      <li><a href="/#training">Training</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="https://sandhan01.pages.dev/">🇩🇪 Deutsch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const nav    = document.getElementById('nav')!;
+  const burger = document.getElementById('burger')!;
+  const menu   = document.getElementById('mobileMenu')!;
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 20);
+  });
+
+  burger.addEventListener('click', () => {
+    menu.classList.toggle('nav__mobile--open');
+    burger.classList.toggle('nav__burger--open');
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('nav__mobile--open');
+      burger.classList.remove('nav__burger--open');
+    });
+  });
+</script>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+
+  .nav--scrolled {
+    background: rgba(245, 239, 230, 0.92);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1px 12px rgba(26, 20, 16, 0.08);
+  }
+
+  .nav__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav__logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--deep);
+    letter-spacing: 0.04em;
+  }
+
+  .nav__links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav__links a {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+
+  .nav__links a:hover { color: var(--terracotta); }
+
+  .nav__lang {
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--warm);
+    border-radius: 2px;
+  }
+
+  .nav__burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav__burger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--deep);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .nav__burger--open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav__burger--open span:nth-child(2) { opacity: 0; }
+  .nav__burger--open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .nav__mobile {
+    display: none;
+    background: var(--sand);
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--warm);
+  }
+
+  .nav__mobile ul { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+  .nav__mobile a { font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text); }
+  .nav__mobile--open { display: block; }
+
+  @media (max-width: 768px) {
+    .nav__links { display: none; }
+    .nav__burger { display: flex; }
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Privacy Policy – Sandhan Westphal">
+  <Nav />
+  <main class="legal">
+    <div class="legal__inner">
+      <h1>Privacy Policy</h1>
+
+      <h2>1. Controller</h2>
+      <p>
+        Sandhan Jürgen Westphal<br />
+        Raimundstr. 10 B, 04177 Leipzig, Germany<br />
+        Email: <a href="mailto:Sandhanwestphal@gmail.com">Sandhanwestphal@gmail.com</a>
+      </p>
+
+      <h2>2. Data collection</h2>
+      <p>
+        When visiting this website, the hosting provider (Cloudflare) automatically
+        stores information in server log files: browser type, operating system,
+        referrer URL, IP address and time of request. This data is not merged with
+        other data sources.
+      </p>
+
+      <h2>3. Contact form</h2>
+      <p>
+        If you use the contact form, your details (name, email, message) are stored
+        to process your enquiry. This data is not passed on without your consent and
+        you may object to storage at any time.
+      </p>
+
+      <h2>4. Google Fonts</h2>
+      <p>
+        This website uses Google Fonts. When the page loads, a connection is established
+        to Google LLC servers, during which your IP address may be transmitted. For more
+        information see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+        policies.google.com/privacy</a>.
+      </p>
+
+      <h2>5. Your rights</h2>
+      <p>
+        You have the right to access, rectification, erasure, and restriction of
+        processing of your stored personal data, as well as the right to data
+        portability. Please contact me by email to exercise these rights.
+      </p>
+
+      <a href="/" class="back-link">← Back to homepage</a>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal { padding: 10rem 2rem 6rem; min-height: 100vh; background: var(--sand); }
+  .legal__inner { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: clamp(2rem, 4vw, 3rem); color: var(--deep); margin-bottom: 2.5rem; }
+  h2 { font-size: 1.3rem; color: var(--deep); margin: 2rem 0 0.75rem; }
+  p { font-size: 0.95rem; color: var(--text); line-height: 1.8; margin-bottom: 0.5rem; }
+  a { color: var(--terracotta); }
+  a:hover { text-decoration: underline; }
+  .back-link { display: inline-block; margin-top: 3rem; font-size: 0.85rem; color: var(--text-light); }
+</style>

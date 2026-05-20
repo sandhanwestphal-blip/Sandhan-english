@@ -1,0 +1,61 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__copy">
+      &copy; {year} Sandhan Jürgen Westphal &middot; Leipzig
+    </p>
+
+    <nav class="footer__nav">
+      <a href="/#about">About me</a>
+      <a href="/#competencies">Competencies</a>
+      <a href="/#training">Training</a>
+      <a href="/#contact">Contact</a>
+      <a href="/imprint">Imprint</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+
+    <a href="https://sandhan01.pages.dev/" class="footer__lang">🇩🇪 Deutsche Version</a>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--deep);
+    color: var(--warm);
+    padding: 2.5rem 2rem;
+  }
+
+  .footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer__copy { font-size: 0.82rem; color: rgba(232, 221, 208, 0.6); }
+
+  .footer__nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+  .footer__nav a {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(232, 221, 208, 0.6);
+    transition: color 0.2s;
+  }
+
+  .footer__nav a:hover { color: var(--warm); }
+
+  .footer__lang { font-size: 0.82rem; color: rgba(232, 221, 208, 0.6); transition: color 0.2s; }
+  .footer__lang:hover { color: var(--warm); }
+
+  @media (max-width: 768px) {
+    .footer__inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
+</style>

@@ -1,0 +1,114 @@
+---
+const timeline = [
+  {
+    year: "1982",
+    text: "Beginning of spiritual practice — meditation, bodywork and first encounter with Eastern philosophy.",
+  },
+  {
+    year: "1990s",
+    text: "Extended stays in Indian ashrams. Deepening in Vipassana and ZaZen. Encounters with great teachers.",
+  },
+  {
+    year: "2000s",
+    text: "Leadership of a mid-sized company. Integration of spiritual practice into management and everyday life.",
+  },
+  {
+    year: "2015",
+    text: "Focus on counselling and accompaniment. NLP and hypnosis training according to Milton Erickson.",
+  },
+];
+---
+
+<section class="about" id="about">
+  <div class="about__inner">
+    <div class="about__text">
+      <p class="section__eyebrow">About me</p>
+      <h2 class="section__title">Four Decades of Lived Experience</h2>
+      <p>
+        My path led me from music college through years in Indian ashrams to
+        leading a mid-sized company. This unusual combination is no coincidence —
+        it is the foundation of my work.
+      </p>
+      <p>
+        Spirituality for me is not a withdrawal from life, but a deeper way of
+        being within it. I accompany people who stand at crossroads, who search
+        for meaning, or who need orientation in times of crisis — with what I
+        truly know: life itself.
+      </p>
+      <p>
+        I work in Leipzig and offer sessions in person as well as by video on request.
+      </p>
+    </div>
+
+    <div class="about__timeline">
+      {timeline.map((entry) => (
+        <div class="timeline__entry">
+          <span class="timeline__year">{entry.year}</span>
+          <p class="timeline__text">{entry.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 7rem 2rem;
+    background-color: var(--sand);
+  }
+
+  .about__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .section__eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 0.75rem;
+  }
+
+  .section__title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: var(--deep);
+    margin-bottom: 1.5rem;
+  }
+
+  .about__text p {
+    margin-bottom: 1rem;
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+
+  .about__timeline { display: flex; flex-direction: column; }
+
+  .timeline__entry {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--warm);
+  }
+
+  .timeline__entry:first-child { border-top: 1px solid var(--warm); }
+
+  .timeline__year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--terracotta);
+    font-weight: 300;
+    padding-top: 0.1rem;
+  }
+
+  .timeline__text { font-size: 0.9rem; color: var(--text); line-height: 1.7; }
+
+  @media (max-width: 1024px) {
+    .about__inner { grid-template-columns: 1fr; gap: 3rem; }
+  }
+</style>
