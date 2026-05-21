@@ -1,39 +1,39 @@
 ---
 const competencies = [
   {
-    title: "NLP",
+    title: "Psychology",
     items: [
-      "Neuro-Linguistic Programming",
-      "Recognising communication patterns",
-      "Dissolving limiting beliefs",
-      "Activating inner resources",
-    ],
-  },
-  {
-    title: "Hypnosis",
-    items: [
+      "NLP Practitioner (Richard Bandler)",
       "Hypnosis after Milton Erickson",
-      "Trance induction",
-      "Inner healing processes",
-      "Deep relaxation",
+      "Trauma healing",
+      "Happiness training",
     ],
   },
   {
-    title: "Meditation & Mindfulness",
+    title: "Meditation",
     items: [
       "Vipassana",
       "ZaZen",
-      "Breathwork",
-      "Stillness and presence",
+      "Osho meditations",
+      "Over 40 years of practice",
     ],
   },
   {
-    title: "Further Offerings",
+    title: "Coaching",
     items: [
-      "Trauma healing",
-      "Coaching",
-      "Reiki",
-      "Bodywork",
+      "Personal Power (Tony Robbins)",
+      "Reiki Master",
+      "Questions of meaning & life transitions",
+      "Professional turning points",
+    ],
+  },
+  {
+    title: "Bodywork",
+    items: [
+      "Rebalancing deep tissue massage",
+      "Spinal Adjustment / Chiropractic",
+      "Root massage",
+      "Dominant massage",
     ],
   },
 ];
@@ -42,8 +42,8 @@ const competencies = [
 <section class="competencies" id="competencies">
   <div class="competencies__inner">
     <div class="competencies__header">
-      <p class="section__eyebrow">Competencies</p>
-      <h2 class="section__title">What I Work With</h2>
+      <p class="section__eyebrow">Competencies &amp; Methods</p>
+      <h2 class="section__title">Body, Mind and Soul as One</h2>
     </div>
 
     <div class="competencies__grid">
@@ -67,7 +67,7 @@ const competencies = [
 <style>
   .competencies {
     padding: 7rem 2rem;
-    background-color: var(--warm);
+    background-color: var(--sand);
   }
 
   .competencies__inner { max-width: 1200px; margin: 0 auto; }
@@ -90,12 +90,12 @@ const competencies = [
   }
 
   .competency__card {
-    background: var(--sand);
+    background: var(--warm);
     padding: 2rem 1.75rem;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background 0.2s;
   }
 
-  .competency__card:hover { transform: translateY(-4px); }
+  .competency__card:hover { background: #ddd0c0; transform: translateY(-4px); }
 
   .competency__icon {
     display: flex;

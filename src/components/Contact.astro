@@ -5,33 +5,22 @@
   <div class="contact__inner">
     <div class="contact__info">
       <p class="section__eyebrow">Contact</p>
-      <h2 class="section__title">Begin a Conversation</h2>
+      <h2 class="section__title">Ready for the<br /><em>Next Step?</em></h2>
       <p class="contact__lead">
-        The initial consultation lasts about 20 minutes and is free of charge.
-        I look forward to getting to know you.
+        I offer you a space where your story has room — without judgement,
+        but with the clarity of someone who knows the extremes of life.
       </p>
 
-      <div class="contact__details">
-        <div class="contact__detail">
-          <span class="contact__label">Address</span>
-          <span>Raimundstr. 10 B<br />04177 Leipzig, Germany</span>
-        </div>
-        <div class="contact__detail">
-          <span class="contact__label">Phone</span>
-          <a href="tel:+491715882385">+49 171 5882385</a>
-        </div>
-        <div class="contact__detail">
-          <span class="contact__label">Email</span>
-          <a href="mailto:Sandhanwestphal@gmail.com">Sandhanwestphal@gmail.com</a>
-        </div>
-        <div class="contact__detail">
-          <span class="contact__label">Sessions</span>
-          <span>In person & by Zoom</span>
-        </div>
-        <div class="contact__detail">
-          <span class="contact__label">Fee</span>
-          <span>1 hour &mdash; &euro; 80.&ndash;</span>
-        </div>
+      <div class="contact__preisbox">
+        <strong class="contact__preis">One session: € 80.– / hour</strong>
+        <span class="contact__gratis">20-minute introductory session free of charge</span>
+        <span class="contact__format">In person in Leipzig &nbsp;&middot;&nbsp; Online via Zoom</span>
+      </div>
+
+      <div class="contact__person">
+        <strong>Sandhan Westphal</strong><br />
+        Leipzig, Germany<br />
+        <a href="mailto:sandhan.westphal@gmx.de">sandhan.westphal@gmx.de</a>
       </div>
     </div>
 
@@ -89,25 +78,74 @@
     margin-bottom: 0.75rem;
   }
 
-  .section__title { font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--deep); margin-bottom: 1.25rem; }
-
-  .contact__lead { font-size: 0.95rem; color: var(--text-light); margin-bottom: 2.5rem; max-width: 380px; }
-
-  .contact__details { display: flex; flex-direction: column; gap: 1.25rem; }
-
-  .contact__detail { display: grid; grid-template-columns: 90px 1fr; gap: 1rem; font-size: 0.9rem; }
-
-  .contact__label {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    padding-top: 0.1rem;
+  .section__title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: var(--deep);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
   }
 
-  .contact__detail a { color: var(--text); transition: color 0.2s; }
-  .contact__detail a:hover { color: var(--terracotta); }
+  .section__title em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
 
+  .contact__lead {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    max-width: 380px;
+  }
+
+  .contact__preisbox {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1.5rem;
+    background: var(--warm);
+    border-left: 3px solid var(--terracotta);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact__preis {
+    font-size: 1.05rem;
+    color: var(--deep);
+    font-weight: 500;
+  }
+
+  .contact__gratis {
+    font-size: 0.88rem;
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  .contact__format {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.8;
+  }
+
+  .contact__person {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.9;
+  }
+
+  .contact__person strong {
+    color: var(--deep);
+    font-weight: 500;
+  }
+
+  .contact__person a {
+    color: var(--terracotta);
+    transition: opacity 0.2s;
+  }
+
+  .contact__person a:hover {
+    opacity: 0.75;
+  }
+
+  /* Form */
   .contact__form { display: flex; flex-direction: column; gap: 1.5rem; }
 
   .form__field { display: flex; flex-direction: column; gap: 0.4rem; }
@@ -142,8 +180,8 @@
   .form__submit {
     align-self: flex-start;
     padding: 0.85rem 2rem;
-    background: var(--deep);
-    color: var(--warm);
+    background: var(--terracotta);
+    color: #fff;
     border: none;
     font-family: 'Jost', sans-serif;
     font-size: 0.85rem;
@@ -153,7 +191,10 @@
     transition: background 0.2s, transform 0.2s;
   }
 
-  .form__submit:hover { background: var(--terracotta); transform: translateY(-2px); }
+  .form__submit:hover {
+    background: var(--deep);
+    transform: translateY(-2px);
+  }
 
   @media (max-width: 1024px) {
     .contact__inner { grid-template-columns: 1fr; gap: 3rem; }
